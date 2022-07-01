@@ -1,0 +1,18 @@
+{
+    "price_drop_alert": {
+        "column": {
+            "value_id": true,
+            "product_id": true,
+            "old_price": true,
+            "new_price": true,
+            "changed_at": true
+        },
+        "index": {
+            "PRICE_DROP_ALERT_PRODUCT_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "PRICE_DROP_ALERT_PRODUCT_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID": true
+        }
+    }
+}

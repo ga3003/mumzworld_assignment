@@ -1,0 +1,11 @@
+type OrderAddress {
+    area: String @doc(description: "The area of the person associated with the shipping/billing address")
+}
+
+input CartAddressInput {
+    area: String
+}
+
+interface CartAddressInterface {
+    area: String
+}

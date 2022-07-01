@@ -1,0 +1,200 @@
+# mutation {
+#   createCustomer(
+#     input: {
+#       firstname: "Abubakar"
+#       lastname: "Afzal"
+#       email: "abu@bakar.com"
+#       password: "b1b2b3l@w+"
+#       is_subscribed: false
+#     }
+#   ) {
+#     customer {
+#       firstname
+#       lastname
+#       email
+#       is_subscribed
+#     }
+#   }
+# }
+
+# mutation {
+#   generateCustomerToken(email: "abu@bakar.com", password: "b1b2b3l@w+") {
+#     token
+#   }
+# }
+
+# query {
+#   customerCart {
+#     id
+#   }
+# }
+
+# mutation {
+#   addSimpleProductsToCart(
+#     input: {
+#       cart_id: "C6fFHi0vHTWaHEuX3ecNBUsWjgelyXEm",
+#       cart_items: [
+#         {
+#           data: {
+#             quantity: 1,
+#             sku: "24-MG04"
+#           }
+#         }
+#       ]
+#     }
+#   ) {
+#     cart {
+#       items {
+#         uid
+#         product {
+#           sku
+#         }
+#         quantity
+#       }
+#     }
+#   }
+# }
+
+# mutation {
+#   setShippingAddressesOnCart(
+#     input: {
+#       cart_id: "C6fFHi0vHTWaHEuX3ecNBUsWjgelyXEm"
+#       shipping_addresses: [
+#         {
+#           address: {
+#             firstname: "Abubakar"
+#             lastname: "Afzal"
+#             company: "Ni pata"
+#             street: ["Gumnaam Gali, Kholi number 46"]
+#             city: "Dubai"
+#             postcode: "90210"
+#             country_code: "AE"
+#             telephone: "987654323"
+#             area: "qwerty"
+#             save_in_address_book: true
+#           }
+#         }
+#       ]
+#     }
+#   ) {
+#     cart {
+#       shipping_addresses {
+#         firstname
+#         lastname
+#         company
+#         street
+#         city
+#         postcode
+#         telephone
+#         country {
+#           code
+#           label
+#         }
+#         area
+#         available_shipping_methods{
+#           carrier_code
+#           carrier_title
+#           method_code
+#           method_title
+#         }
+#       }
+#     }
+#   }
+# }
+
+# mutation {
+#   setBillingAddressOnCart(
+#     input: {
+#       cart_id: "C6fFHi0vHTWaHEuX3ecNBUsWjgelyXEm"
+#       billing_address: {
+#         address: {
+#           firstname: "Abubakar"
+#           lastname: "Afzal"
+#           company: "Ni pata"
+#           street: ["Gumnaam Gali, Kholi number 46"]
+#           city: "Dubai"
+#           postcode: "90210"
+#           country_code: "AE"
+#           telephone: "987654323"
+#           area: "qwerty"
+#           save_in_address_book: true
+#         }
+#       }
+#     }
+#   ) {
+#     cart {
+#       billing_address {
+#         firstname
+#         lastname
+#         company
+#         street
+#         city
+#         region{
+#           code
+#           label
+#         }
+#         postcode
+#         telephone
+#         country {
+#           code
+#           label
+#         }
+#       }
+#     }
+#   }
+# }
+
+# mutation {
+#   setShippingMethodsOnCart(input: {
+#     cart_id: "C6fFHi0vHTWaHEuX3ecNBUsWjgelyXEm"
+#     shipping_methods: [
+#       {
+#         carrier_code: "flatrate"
+#         method_code: "flatrate"
+#       }
+#     ]
+#   }) {
+#     cart {
+#       shipping_addresses {
+#         selected_shipping_method {
+#           carrier_code
+#           method_code
+#           carrier_title
+#           method_title
+#         }
+#       }
+#     }
+#   }
+# }
+
+# query {
+#   cart(cart_id: "C6fFHi0vHTWaHEuX3ecNBUsWjgelyXEm") {
+#     available_payment_methods {
+#       code
+#       title
+#     }
+#   }
+# }
+
+# mutation {
+#   setPaymentMethodOnCart(input: {
+#       cart_id: "C6fFHi0vHTWaHEuX3ecNBUsWjgelyXEm"
+#       payment_method: {
+#           code: "checkmo"
+#       }
+#   }) {
+#     cart {
+#       selected_payment_method {
+#         code
+#       }
+#     }
+#   }
+# }
+
+# mutation {
+#   placeOrder(input: {cart_id: "C6fFHi0vHTWaHEuX3ecNBUsWjgelyXEm"}) {
+#     order {
+#       order_number
+#     }
+#   }
+# }

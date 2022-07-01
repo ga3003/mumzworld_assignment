@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog">
+            <group id="pride_drop" translate="label" type="text" sortOrder="401" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Price Drop</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable Price Drop</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="threshold" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Price Drop Threshold</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                    <comment>Please enter threshold value in percentage.</comment>
+                </field>
+                <field id="alert_schedule" translate="label comment" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Alert Schedule</label>
+                    <comment>Please enter the cron format timing to schedule the price drop alert. Format: * * * * *</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

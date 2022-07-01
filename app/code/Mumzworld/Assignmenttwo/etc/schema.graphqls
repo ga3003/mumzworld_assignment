@@ -1,0 +1,3 @@
+type StoreConfig @doc(description: "The type contains information about a store config.") {
+    is_returnable : Boolean @doc(description: "Is product eligible for Return?.")
+}
