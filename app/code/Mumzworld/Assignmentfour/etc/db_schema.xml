@@ -3,9 +3,10 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="price_drop_alert" resource="default" engine="innodb" comment="Catalog Product Datetime Attribute Backend Table">
         <column xsi:type="int" name="value_id" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
-        <column xsi:type="int" name="product_id" unsigned="true" nullable="false" identity="false" default="0" comment="Product ID"/>
+        <column xsi:type="int" name="product_id" unsigned="true" nullable="false" identity="false" default="" comment="Product ID"/>
         <column xsi:type="decimal" name="old_price" nullable="false" comment="Old Price" />
         <column xsi:type="decimal" name="new_price" nullable="false" comment="New Price" />
+        <column xsi:type="int" name="store_id" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID"/>
         <column xsi:type="timestamp" name="changed_at" on_update="false" nullable="true" default="CURRENT_TIMESTAMP" comment="Price change time"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="value_id"/>

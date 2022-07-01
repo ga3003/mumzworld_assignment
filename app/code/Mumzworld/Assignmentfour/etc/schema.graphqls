@@ -7,3 +7,12 @@ type Customer @doc(description: "Customer defines the customer name and address 
     subscribe_price_drop: Boolean @doc(description: "Indicates whether the customer is subscribed to the product's price drop.")
     @resolver(class: "\\Mumzworld\\Assignmentfour\\Model\\Resolver\\GetCustomerCustomAttr")
 }
+
+input CustomerInput {
+    subscribe_price_drop: Boolean @doc(description: "Indicates whether the customer is subscribed to the product's price drop.")
+}
+
+interface ProductInterface {
+    old_price: String @doc(description: "Product's old price. Useful for showing price drop.")
+        @resolver(class: "\\Mumzworld\\Assignmentfour\\Model\\Resolver\\GetProductOldPrice")
+}
