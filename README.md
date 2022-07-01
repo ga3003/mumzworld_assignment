@@ -45,5 +45,5 @@ This module will be responsible for sending alerts to the customers for the prod
 - Alert will be triggered to the customers who have price dropped products in their wishlist or cart.
 - Created custom price_drop_alert table to keep old_price & new_price of the product. Reason to create custom table:
   - This will be having only limited data to be loaded whenever the cron is executed.
-  - We can add another cron to clear data of yesterday or according to the configuration we will create.
-  - 
+  - We can add another cron to clear old data of yesterday or according to the configuration we will create.
+  - Here we can also save the perceentage change so that we can filter with threshold.
